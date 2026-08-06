@@ -216,6 +216,8 @@ const FAQS = [
 ];
 
 function Home() {
+  const [openStory, setOpenStory] = useState<typeof NEWS[number] | null>(null);
+
   return (
     <div className="min-h-dvh bg-background">
       <a
