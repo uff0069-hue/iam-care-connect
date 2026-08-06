@@ -438,6 +438,37 @@ function Home() {
               ))}
             </div>
 
+            <Dialog open={!!openStory} onOpenChange={(open) => !open && setOpenStory(null)}>
+              <DialogContent className="max-w-2xl">
+                {openStory && (
+                  <>
+                    <DialogHeader>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="rounded-full bg-success/12 px-3 py-1 text-xs font-bold uppercase tracking-wide text-success">
+                          {openStory.badge}
+                        </span>
+                        <time className="text-xs font-semibold text-muted-foreground">
+                          {openStory.date}
+                        </time>
+                      </div>
+                      <DialogTitle className="mt-3 text-left text-xl font-extrabold leading-snug">
+                        {openStory.title}
+                      </DialogTitle>
+                      <DialogDescription className="sr-only">
+                        Full story details
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-4 max-h-[40vh] overflow-hidden rounded-xl">
+                      <ImagePlaceholder label={openStory.placeholder} aspect="aspect-[16/9]" />
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      {openStory.full}
+                    </p>
+                  </>
+                )}
+              </DialogContent>
+            </Dialog>
+
             {/* Pillars */}
             <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {PILLARS.map((p) => (
