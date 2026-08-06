@@ -122,6 +122,7 @@ const NEWS = [
     badge: "Gold Medal",
     title: "Gold for India: IMDRC-trained participants shine at World Boccia 2024",
     body: "Anjali Devi trained at IMDRC Solan and went on to win a gold medal at the World Boccia Challenger 2024 in Cairo, Egypt.",
+    full: "Anjali Devi came to IMDRC Solan with limited access to adaptive sport training. Through the centre's structured Boccia programme — combining physiotherapy, strategy coaching and mental resilience — she developed the precision and confidence to compete internationally. In August 2024 she won gold at the World Boccia Challenger in Cairo, Egypt, bringing home a historic medal for India and proving that with the right support, muscular dystrophy is not a barrier to world-class achievement.",
     placeholder: "Anjali Devi World Boccia Gold Medalist",
   },
   {
@@ -129,6 +130,7 @@ const NEWS = [
     badge: "Awareness",
     title: "Governor of HP appoints Vivek Agnihotri to raise muscular dystrophy awareness",
     body: "Filmmaker Vivek Ranjan Agnihotri joins IMDRC as brand ambassador for muscular dystrophy awareness in India.",
+    full: "In a ceremony at the Governor's House in Himachal Pradesh, filmmaker Vivek Ranjan Agnihotri was appointed brand ambassador for muscular dystrophy awareness. His role is to amplify IAMD's message across media platforms, encourage early diagnosis, and mobilise public support for the Integrated Muscular Dystrophy Rehabilitation Centre. The partnership aims to bring muscular dystrophy into mainstream conversation and inspire donors, policymakers and families to act.",
     placeholder: "Vivek Agnihotri joins IMDRC as Brand Ambassador",
   },
   {
@@ -136,6 +138,7 @@ const NEWS = [
     badge: "Patient Story",
     title: "Vedant's journey: overcoming challenges and pursuing success",
     body: "Vedant's life has been an incredible journey filled with determination and a strong will to keep learning and growing.",
+    full: "Vedant was diagnosed with muscular dystrophy at a young age, but he refused to let the condition define his future. At IMDRC Solan he received personalised physiotherapy, assistive-technology guidance and counselling that helped him return to education and independent living. Today he is pursuing his goals with confidence, sharing his story to remind other patients and families that a meaningful, ambitious life is absolutely possible.",
     placeholder: "Vedant at IMDRC Solan",
   },
 ];
