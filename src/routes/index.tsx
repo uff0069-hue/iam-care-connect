@@ -427,12 +427,13 @@ function Home() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {item.body}
                   </p>
-                  <a
-                    href="#stories"
+                  <button
+                    type="button"
+                    onClick={() => setOpenStory(item)}
                     className="mt-5 inline-flex min-h-11 items-center text-sm font-bold text-primary underline-offset-4 hover:underline"
                   >
                     Continue reading
-                  </a>
+                  </button>
                 </article>
               ))}
             </div>
