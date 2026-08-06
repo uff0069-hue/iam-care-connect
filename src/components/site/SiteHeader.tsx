@@ -54,7 +54,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-surface hover:text-foreground"
+                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-surface hover:text-foreground"
               >
                 {item.label}
               </a>
@@ -64,13 +64,13 @@ export function SiteHeader() {
           <div className="hidden items-center gap-2 lg:flex">
             <a
               href="#book"
-              className="inline-flex min-h-11 items-center rounded-full border-2 border-primary px-4 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full border-2 border-primary px-4 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               Book a Visit
             </a>
             <a
               href="#donate"
-              className="warm-surface inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
+              className="warm-surface inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full px-4 text-sm font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
             >
               <HeartHandshake className="size-4" aria-hidden="true" />
               Donate (80G Tax Free)
