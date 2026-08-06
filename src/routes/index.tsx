@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Activity,
@@ -15,6 +16,13 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { DonateForm } from "@/components/site/DonateForm";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,6 +122,7 @@ const NEWS = [
     badge: "Gold Medal",
     title: "Gold for India: IMDRC-trained participants shine at World Boccia 2024",
     body: "Anjali Devi trained at IMDRC Solan and went on to win a gold medal at the World Boccia Challenger 2024 in Cairo, Egypt.",
+    full: "Anjali Devi came to IMDRC Solan with limited access to adaptive sport training. Through the centre's structured Boccia programme — combining physiotherapy, strategy coaching and mental resilience — she developed the precision and confidence to compete internationally. In August 2024 she won gold at the World Boccia Challenger in Cairo, Egypt, bringing home a historic medal for India and proving that with the right support, muscular dystrophy is not a barrier to world-class achievement.",
     placeholder: "Anjali Devi World Boccia Gold Medalist",
   },
   {
@@ -121,6 +130,7 @@ const NEWS = [
     badge: "Awareness",
     title: "Governor of HP appoints Vivek Agnihotri to raise muscular dystrophy awareness",
     body: "Filmmaker Vivek Ranjan Agnihotri joins IMDRC as brand ambassador for muscular dystrophy awareness in India.",
+    full: "In a ceremony at the Governor's House in Himachal Pradesh, filmmaker Vivek Ranjan Agnihotri was appointed brand ambassador for muscular dystrophy awareness. His role is to amplify IAMD's message across media platforms, encourage early diagnosis, and mobilise public support for the Integrated Muscular Dystrophy Rehabilitation Centre. The partnership aims to bring muscular dystrophy into mainstream conversation and inspire donors, policymakers and families to act.",
     placeholder: "Vivek Agnihotri joins IMDRC as Brand Ambassador",
   },
   {
@@ -128,6 +138,7 @@ const NEWS = [
     badge: "Patient Story",
     title: "Vedant's journey: overcoming challenges and pursuing success",
     body: "Vedant's life has been an incredible journey filled with determination and a strong will to keep learning and growing.",
+    full: "Vedant was diagnosed with muscular dystrophy at a young age, but he refused to let the condition define his future. At IMDRC Solan he received personalised physiotherapy, assistive-technology guidance and counselling that helped him return to education and independent living. Today he is pursuing his goals with confidence, sharing his story to remind other patients and families that a meaningful, ambitious life is absolutely possible.",
     placeholder: "Vedant at IMDRC Solan",
   },
 ];
@@ -205,6 +216,8 @@ const FAQS = [
 ];
 
 function Home() {
+  const [openStory, setOpenStory] = useState<typeof NEWS[number] | null>(null);
+
   return (
     <div className="min-h-dvh bg-background">
       <a
@@ -414,15 +427,47 @@ function Home() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {item.body}
                   </p>
-                  <a
-                    href="#stories"
+                  <button
+                    type="button"
+                    onClick={() => setOpenStory(item)}
                     className="mt-5 inline-flex min-h-11 items-center text-sm font-bold text-primary underline-offset-4 hover:underline"
                   >
                     Continue reading
-                  </a>
+                  </button>
                 </article>
               ))}
             </div>
+
+            <Dialog open={!!openStory} onOpenChange={(open) => !open && setOpenStory(null)}>
+              <DialogContent className="max-w-2xl">
+                {openStory && (
+                  <>
+                    <DialogHeader>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="rounded-full bg-success/12 px-3 py-1 text-xs font-bold uppercase tracking-wide text-success">
+                          {openStory.badge}
+                        </span>
+                        <time className="text-xs font-semibold text-muted-foreground">
+                          {openStory.date}
+                        </time>
+                      </div>
+                      <DialogTitle className="mt-3 text-left text-xl font-extrabold leading-snug">
+                        {openStory.title}
+                      </DialogTitle>
+                      <DialogDescription className="sr-only">
+                        Full story details
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-4 max-h-[40vh] overflow-hidden rounded-xl">
+                      <ImagePlaceholder label={openStory.placeholder} aspect="aspect-[16/9]" />
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      {openStory.full}
+                    </p>
+                  </>
+                )}
+              </DialogContent>
+            </Dialog>
 
             {/* Pillars */}
             <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
