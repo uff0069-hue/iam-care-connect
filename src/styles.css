@@ -223,3 +223,130 @@
   background: var(--gradient-warm);
   color: oklch(1 0 0);
 }
+
+/* ---------- Vibrant accent tones ---------- */
+:root {
+  --tone-ocean-1: oklch(0.55 0.19 245);
+  --tone-ocean-2: oklch(0.68 0.15 210);
+  --tone-teal-1: oklch(0.6 0.13 180);
+  --tone-teal-2: oklch(0.7 0.14 160);
+  --tone-lime-1: oklch(0.66 0.16 145);
+  --tone-lime-2: oklch(0.76 0.17 128);
+  --tone-amber-1: oklch(0.74 0.16 75);
+  --tone-amber-2: oklch(0.8 0.15 92);
+  --tone-coral-1: oklch(0.66 0.2 32);
+  --tone-coral-2: oklch(0.72 0.18 55);
+  --tone-magenta-1: oklch(0.58 0.22 340);
+  --tone-magenta-2: oklch(0.66 0.2 8);
+  --tone-violet-1: oklch(0.52 0.24 292);
+  --tone-violet-2: oklch(0.62 0.2 316);
+  --gradient-rainbow: linear-gradient(
+    100deg,
+    var(--tone-violet-1) 0%,
+    var(--tone-ocean-1) 32%,
+    var(--tone-teal-1) 58%,
+    var(--tone-coral-1) 100%
+  );
+  --gradient-aurora: linear-gradient(
+    155deg,
+    oklch(0.208 0.036 265) 0%,
+    var(--tone-violet-1) 45%,
+    var(--tone-ocean-1) 78%,
+    var(--tone-teal-1) 100%
+  );
+}
+
+.hc {
+  --tone-ocean-1: oklch(0.28 0.16 250);
+  --tone-ocean-2: oklch(0.28 0.16 250);
+  --tone-teal-1: oklch(0.3 0.1 180);
+  --tone-teal-2: oklch(0.3 0.1 180);
+  --tone-lime-1: oklch(0.32 0.11 145);
+  --tone-lime-2: oklch(0.32 0.11 145);
+  --tone-amber-1: oklch(0.38 0.13 70);
+  --tone-amber-2: oklch(0.38 0.13 70);
+  --tone-coral-1: oklch(0.4 0.17 32);
+  --tone-coral-2: oklch(0.4 0.17 32);
+  --tone-magenta-1: oklch(0.34 0.2 340);
+  --tone-magenta-2: oklch(0.34 0.2 340);
+  --tone-violet-1: oklch(0.3 0.2 292);
+  --tone-violet-2: oklch(0.3 0.2 292);
+  --gradient-rainbow: linear-gradient(100deg, oklch(0 0 0), oklch(0 0 0));
+  --gradient-aurora: linear-gradient(155deg, oklch(0 0 0), oklch(0.12 0.02 264));
+}
+
+@utility tone-ocean {
+  --tone: var(--tone-ocean-1);
+  --tone-2: var(--tone-ocean-2);
+}
+@utility tone-teal {
+  --tone: var(--tone-teal-1);
+  --tone-2: var(--tone-teal-2);
+}
+@utility tone-lime {
+  --tone: var(--tone-lime-1);
+  --tone-2: var(--tone-lime-2);
+}
+@utility tone-amber {
+  --tone: var(--tone-amber-1);
+  --tone-2: var(--tone-amber-2);
+}
+@utility tone-coral {
+  --tone: var(--tone-coral-1);
+  --tone-2: var(--tone-coral-2);
+}
+@utility tone-magenta {
+  --tone: var(--tone-magenta-1);
+  --tone-2: var(--tone-magenta-2);
+}
+@utility tone-violet {
+  --tone: var(--tone-violet-1);
+  --tone-2: var(--tone-violet-2);
+}
+
+/* Card tinted with the active tone */
+@utility tinted {
+  border-color: color-mix(in oklab, var(--tone, var(--color-primary)) 32%, var(--color-border));
+  background-image: linear-gradient(
+    165deg,
+    color-mix(in oklab, var(--tone, var(--color-primary)) 9%, transparent) 0%,
+    transparent 60%
+  );
+}
+
+@utility tone-chip {
+  background-image: linear-gradient(
+    135deg,
+    var(--tone, var(--color-primary)),
+    var(--tone-2, var(--color-primary))
+  );
+  color: oklch(1 0 0);
+}
+
+@utility tone-text {
+  color: color-mix(in oklab, var(--tone, var(--color-primary)) 78%, var(--color-foreground));
+}
+
+@utility tone-bar {
+  background-image: linear-gradient(
+    90deg,
+    var(--tone, var(--color-primary)),
+    var(--tone-2, var(--color-primary))
+  );
+}
+
+@utility rainbow-text {
+  background-image: var(--gradient-rainbow);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility rainbow-bar {
+  background-image: var(--gradient-rainbow);
+}
+
+@utility aurora-surface {
+  background: var(--gradient-aurora);
+  color: var(--color-navy-foreground);
+}

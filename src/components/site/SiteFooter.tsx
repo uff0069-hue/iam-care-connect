@@ -1,8 +1,21 @@
+import { Link } from "@tanstack/react-router";
 import { MapPin, Mail, Phone } from "lucide-react";
+
+const LINKS = [
+  { label: "Home", to: "/" as const },
+  { label: "About Us", to: "/about" as const },
+  { label: "Muscular Dystrophy Care", to: "/care" as const },
+  { label: "Facilities & Booking", to: "/facilities" as const },
+  { label: "Success Stories", to: "/stories" as const },
+  { label: "Achievers & Awards", to: "/awards" as const },
+  { label: "Donate", to: "/donate" as const },
+  { label: "Contact & FAQs", to: "/contact" as const },
+];
 
 export function SiteFooter() {
   return (
-    <footer className="hero-surface mt-24">
+    <footer className="aurora-surface mt-24">
+      <div className="rainbow-bar h-1.5 w-full" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <h2 className="text-lg font-extrabold">IAMD</h2>
@@ -17,21 +30,15 @@ export function SiteFooter() {
             Explore
           </h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {[
-              ["About Us", "#about"],
-              ["Facilities & Booking", "#facilities"],
-              ["Muscular Dystrophy Care", "#care"],
-              ["Success Stories", "#stories"],
-              ["Donors", "#donors"],
-              ["FAQs", "#faqs"],
-            ].map(([label, href]) => (
-              <li key={href}>
-                <a
-                  href={href}
+            {LINKS.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  activeOptions={{ exact: item.to === "/" }}
                   className="inline-flex min-h-9 items-center underline-offset-4 hover:underline"
                 >
-                  {label}
-                </a>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -73,12 +80,12 @@ export function SiteFooter() {
           <p className="mt-4 text-sm text-navy-foreground/75">
             All donations are eligible for tax exemption under Section 80G.
           </p>
-          <a
-            href="#donate"
+          <Link
+            to="/donate"
             className="warm-surface mt-4 inline-flex min-h-11 items-center justify-center rounded-full px-5 text-sm font-bold"
           >
             Donate now
-          </a>
+          </Link>
         </div>
       </div>
 
