@@ -199,3 +199,182 @@ export const FAQS = [
     a: "Call the helpline on 01792 292037 or 92180 98999, or use the booking request form on this page. Our coordinator will confirm availability and share a preparation checklist.",
   },
 ];
+
+export const TEAM = [
+  {
+    name: "Smt. Sanjana Goyal",
+    role: "Founder & President",
+    body: "A parent-turned-advocate who founded IAMD in 1992 to give Indian families affected by muscular dystrophy a voice, a community and a place to go.",
+    placeholder: "Founder & President of IAMD",
+    tone: "tone-violet",
+  },
+  {
+    name: "Sh. Vipul Goyal",
+    role: "General Secretary",
+    body: "Leads national advocacy, partnerships and the day-to-day running of the Integrated Muscular Dystrophy Rehabilitation Centre at Manav Mandir, Solan.",
+    placeholder: "General Secretary of IAMD",
+    tone: "tone-ocean",
+  },
+  {
+    name: "Medical & Physiotherapy Team",
+    role: "Clinical care",
+    body: "Consulting physicians, physiotherapists and hydrotherapy specialists who design and supervise every patient's rehabilitation cycle.",
+    placeholder: "Medical and physiotherapy team at IMDRC",
+    tone: "tone-teal",
+  },
+  {
+    name: "Counsellors & Yoga Instructors",
+    role: "Wellbeing",
+    body: "Counsellors, therapeutic-yoga instructors and activity coordinators supporting the emotional and social side of living with muscular dystrophy.",
+    placeholder: "Counsellors and yoga instructors at IMDRC",
+    tone: "tone-amber",
+  },
+  {
+    name: "Care & Support Staff",
+    role: "Residential care",
+    body: "Attendants, kitchen and housekeeping staff who keep the accessible rooms, dining hall and campus running for patients and caregivers.",
+    placeholder: "Support staff at IMDRC Solan",
+    tone: "tone-lime",
+  },
+  {
+    name: "Volunteers",
+    role: "Community",
+    body: "Students, professionals and families who give their time to camps, awareness drives, fundraising and companionship at the centre.",
+    placeholder: "Volunteers at an IAMD awareness camp",
+    tone: "tone-coral",
+  },
+];
+
+export const PRICE_LIST = [
+  {
+    item: "Patient + one caregiver — shared room (per day)",
+    price: "₹700",
+    note: "Includes accommodation and three nutrition-planned meals.",
+  },
+  {
+    item: "Patient + one caregiver — private room (per day)",
+    price: "₹1,200",
+    note: "Accessible attached facilities, step-free access.",
+  },
+  {
+    item: "Hydrotherapy session",
+    price: "₹300",
+    note: "Warm-water pool, hoist access, supervised by a trained therapist.",
+  },
+  {
+    item: "Physiotherapy session",
+    price: "₹250",
+    note: "One-to-one session with a muscular dystrophy specialist.",
+  },
+  {
+    item: "Therapeutic yoga session",
+    price: "₹150",
+    note: "Group session focused on breathing, flexibility and relaxation.",
+  },
+  {
+    item: "Counselling session (patient or family)",
+    price: "No charge",
+    note: "Funded entirely by donations.",
+  },
+  {
+    item: "Medical assessment & care plan",
+    price: "₹500",
+    note: "Functional assessment, care plan and home programme.",
+  },
+  {
+    item: "Two-week integrated rehabilitation cycle",
+    price: "₹14,000",
+    note: "Bundled stay, meals, hydro, physio, yoga, counselling and review.",
+  },
+];
+
+export const BLOG_POSTS = [
+  {
+    date: "12 Jul 2026",
+    tag: "Guides",
+    title: "Understanding the first signs of muscular dystrophy in children",
+    body: "Frequent falls, difficulty climbing stairs, calf enlargement and delayed walking are early signals that deserve a specialist opinion.",
+    placeholder: "Child undergoing an early mobility assessment",
+    tone: "tone-ocean",
+  },
+  {
+    date: "28 Jun 2026",
+    tag: "Therapy",
+    title: "Why warm-water hydrotherapy works so well for neuromuscular conditions",
+    body: "Buoyancy removes load from weakened muscles, allowing a wider range of movement than is possible on land.",
+    placeholder: "Hydrotherapy pool session at IMDRC",
+    tone: "tone-teal",
+  },
+  {
+    date: "09 Jun 2026",
+    tag: "Caregivers",
+    title: "A caregiver's guide to safe transfers and daily positioning",
+    body: "Practical techniques taught at IMDRC that protect both the patient's joints and the caregiver's back.",
+    placeholder: "Caregiver training session at IMDRC",
+    tone: "tone-amber",
+  },
+  {
+    date: "21 May 2026",
+    tag: "Research",
+    title: "Gene therapy and exon-skipping: what Indian families should know in 2026",
+    body: "A plain-language summary of where global clinical research stands and what is realistically available in India today.",
+    placeholder: "Research and clinical trials briefing",
+    tone: "tone-violet",
+  },
+  {
+    date: "02 May 2026",
+    tag: "Advocacy",
+    title: "Disability certification and government schemes: a step-by-step walkthrough",
+    body: "How to obtain a UDID card, what documents to carry, and which state and central schemes apply.",
+    placeholder: "Advocacy and disability rights workshop",
+    tone: "tone-coral",
+  },
+  {
+    date: "18 Apr 2026",
+    tag: "Nutrition",
+    title: "Building a balanced plate for a person with muscular dystrophy",
+    body: "Protein, calcium, vitamin D and weight management — the nutrition principles behind our dining programme.",
+    placeholder: "Nutrition planned meals at IMDRC dining hall",
+    tone: "tone-lime",
+  },
+];
+
+export const MD_TYPES = [
+  {
+    name: "Duchenne muscular dystrophy (DMD)",
+    body: "The most common childhood form, usually appearing between ages 2 and 5 in boys. Progressive weakness begins in the hips, thighs and shoulders.",
+    tone: "tone-ocean",
+  },
+  {
+    name: "Becker muscular dystrophy",
+    body: "Related to DMD but slower and milder, often beginning in adolescence or early adulthood with a longer period of independent walking.",
+    tone: "tone-teal",
+  },
+  {
+    name: "Limb-girdle muscular dystrophy",
+    body: "A group of conditions affecting the shoulder and hip muscles first, with onset from childhood through adulthood.",
+    tone: "tone-amber",
+  },
+  {
+    name: "Myotonic dystrophy",
+    body: "The most common adult-onset form. Alongside weakness it can affect the heart, eyes, breathing and hormone regulation.",
+    tone: "tone-violet",
+  },
+  {
+    name: "Facioscapulohumeral (FSHD)",
+    body: "Weakness starts in the face, shoulder blades and upper arms, and progresses slowly over many years.",
+    tone: "tone-coral",
+  },
+  {
+    name: "Spinal muscular atrophy & allied disorders",
+    body: "Motor-neuron and other neuromuscular disorders that share rehabilitation needs and are also supported at IMDRC.",
+    tone: "tone-lime",
+  },
+];
+
+export const LEGAL_LINKS = [
+  { label: "Terms & Conditions", to: "/terms" as const },
+  { label: "Privacy Policy", to: "/privacy" as const },
+  { label: "Cancellation & Refund", to: "/refund" as const },
+  { label: "Shipping & Delivery", to: "/shipping" as const },
+];

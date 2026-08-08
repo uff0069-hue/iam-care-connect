@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import { PILLARS, SERVICES, NEWS } from "@/lib/site-content";
+import { AWARDS, DONORS, PILLARS, SERVICES, NEWS } from "@/lib/site-content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,12 +40,11 @@ function Home() {
               id="hero-heading"
               className="mt-6 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl"
             >
-              Empowering Lives Affected by Muscular Dystrophy Since 1992
+              Indian Association Of Muscular Dystrophy (IAMD) — Empowering Lives Since 1992
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              Integrated rehabilitation, hydrotherapy and holistic support at the Integrated
-              Muscular Dystrophy Rehabilitation Centre (IMDRC), Solan — providing comprehensive care
-              and management since 2018.
+              Integrated Muscular Dystrophy Rehabilitation Center (IMDRC) — providing comprehensive
+              services since 2018 in Solan, Himachal Pradesh.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -53,14 +52,20 @@ function Home() {
                 to="/contact"
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-card px-6 text-base font-bold text-primary shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
               >
-                Book Patient Rehabilitation Visit
+                Book a Visit
               </Link>
               <Link
-                to="/donate"
+                to="/support"
                 className="warm-surface inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
               >
                 <HeartHandshake className="size-5" aria-hidden="true" />
-                Sponsor a Patient
+                Support Us
+              </Link>
+              <Link
+                to="/register"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-navy-foreground/40 px-6 text-base font-bold"
+              >
+                Register Patient
               </Link>
             </div>
 
@@ -149,7 +154,7 @@ function Home() {
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.slice(0, 4).map((service) => (
+            {SERVICES.map((service) => (
               <article
                 key={service.title}
                 className={`lift-card tinted ${service.tone} rounded-2xl border bg-card p-6`}
@@ -159,11 +164,52 @@ function Home() {
                 </span>
                 <h3 className="mt-4 text-lg font-extrabold">{service.title}</h3>
                 <p className="tone-text mt-1 text-sm font-semibold">{service.tagline}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
+
+      {/* DONORS & AWARDS */}
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24" aria-labelledby="donors-awards">
+        <h2 id="donors-awards" className="text-3xl font-extrabold sm:text-4xl">
+          Our donors &amp; <span className="rainbow-text">recognition</span>
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          Supported by institutions such as the Wagh Bakri Group (Piyush Bhai Desai), and recognised
+          by the President of India, state governments and national bodies.
+        </p>
+
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {DONORS.slice(0, 8).map((donor) => (
+            <li key={donor}>
+              <ImagePlaceholder label={`Donor logo — ${donor}`} aspect="aspect-[3/2]" />
+            </li>
+          ))}
+        </ul>
+
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {AWARDS.map((award, i) => (
+            <li
+              key={award}
+              className={`lift-card tinted ${["tone-amber", "tone-violet", "tone-ocean", "tone-coral"][i % 4]} rounded-2xl border bg-card p-4`}
+            >
+              <ImagePlaceholder label={award} aspect="aspect-[4/3]" />
+              <p className="mt-4 text-sm font-semibold leading-snug">{award}</p>
+            </li>
+          ))}
+        </ul>
+
+        <Link
+          to="/awards"
+          className="mt-10 inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-primary px-6 text-base font-bold text-primary"
+        >
+          All awards &amp; honourees <ArrowRight className="size-4" aria-hidden="true" />
+        </Link>
+      </section>
+
+
 
       {/* STORIES PREVIEW */}
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24" aria-labelledby="stories-preview">
