@@ -40,12 +40,11 @@ function Home() {
               id="hero-heading"
               className="mt-6 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl"
             >
-              Empowering Lives Affected by Muscular Dystrophy Since 1992
+              Indian Association Of Muscular Dystrophy (IAMD) — Empowering Lives Since 1992
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              Integrated rehabilitation, hydrotherapy and holistic support at the Integrated
-              Muscular Dystrophy Rehabilitation Centre (IMDRC), Solan — providing comprehensive care
-              and management since 2018.
+              Integrated Muscular Dystrophy Rehabilitation Center (IMDRC) — providing comprehensive
+              services since 2018 in Solan, Himachal Pradesh.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -53,14 +52,20 @@ function Home() {
                 to="/contact"
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-card px-6 text-base font-bold text-primary shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
               >
-                Book Patient Rehabilitation Visit
+                Book a Visit
               </Link>
               <Link
-                to="/donate"
+                to="/support"
                 className="warm-surface inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
               >
                 <HeartHandshake className="size-5" aria-hidden="true" />
-                Sponsor a Patient
+                Support Us
+              </Link>
+              <Link
+                to="/register"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-navy-foreground/40 px-6 text-base font-bold"
+              >
+                Register Patient
               </Link>
             </div>
 
