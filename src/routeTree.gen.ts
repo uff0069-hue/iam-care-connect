@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AwardsRouteImport } from './routes/awards'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiagnosisRouteImport } from './routes/diagnosis'
@@ -24,6 +25,7 @@ import { Route as ResearchRouteImport } from './routes/research'
 import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as VolunteerRouteImport } from './routes/volunteer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -38,6 +40,11 @@ const AboutRoute = AboutRouteImport.update({
 const AwardsRoute = AwardsRouteImport.update({
   id: '/awards',
   path: '/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareRoute = CareRouteImport.update({
@@ -100,11 +107,17 @@ const TeamRoute = TeamRouteImport.update({
   path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VolunteerRoute = VolunteerRouteImport.update({
+  id: '/volunteer',
+  path: '/volunteer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blog': typeof BlogRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
   '/diagnosis': typeof DiagnosisRoute
@@ -117,11 +130,13 @@ export interface FileRoutesByFullPath {
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blog': typeof BlogRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
   '/diagnosis': typeof DiagnosisRoute
@@ -134,12 +149,14 @@ export interface FileRoutesByTo {
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awards': typeof AwardsRoute
+  '/blog': typeof BlogRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
   '/diagnosis': typeof DiagnosisRoute
@@ -152,6 +169,7 @@ export interface FileRoutesById {
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/volunteer': typeof VolunteerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -159,6 +177,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awards'
+    | '/blog'
     | '/care'
     | '/contact'
     | '/diagnosis'
@@ -171,11 +190,13 @@ export interface FileRouteTypes {
     | '/stories'
     | '/support'
     | '/team'
+    | '/volunteer'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/awards'
+    | '/blog'
     | '/care'
     | '/contact'
     | '/diagnosis'
@@ -188,11 +209,13 @@ export interface FileRouteTypes {
     | '/stories'
     | '/support'
     | '/team'
+    | '/volunteer'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/awards'
+    | '/blog'
     | '/care'
     | '/contact'
     | '/diagnosis'
@@ -205,12 +228,14 @@ export interface FileRouteTypes {
     | '/stories'
     | '/support'
     | '/team'
+    | '/volunteer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AwardsRoute: typeof AwardsRoute
+  BlogRoute: typeof BlogRoute
   CareRoute: typeof CareRoute
   ContactRoute: typeof ContactRoute
   DiagnosisRoute: typeof DiagnosisRoute
@@ -223,6 +248,7 @@ export interface RootRouteChildren {
   StoriesRoute: typeof StoriesRoute
   SupportRoute: typeof SupportRoute
   TeamRoute: typeof TeamRoute
+  VolunteerRoute: typeof VolunteerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -246,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/awards'
       fullPath: '/awards'
       preLoaderRoute: typeof AwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/care': {
@@ -332,6 +365,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/volunteer': {
+      id: '/volunteer'
+      path: '/volunteer'
+      fullPath: '/volunteer'
+      preLoaderRoute: typeof VolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -339,6 +379,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AwardsRoute: AwardsRoute,
+  BlogRoute: BlogRoute,
   CareRoute: CareRoute,
   ContactRoute: ContactRoute,
   DiagnosisRoute: DiagnosisRoute,
@@ -351,6 +392,7 @@ const rootRouteChildren: RootRouteChildren = {
   StoriesRoute: StoriesRoute,
   SupportRoute: SupportRoute,
   TeamRoute: TeamRoute,
+  VolunteerRoute: VolunteerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
