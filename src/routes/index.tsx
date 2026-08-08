@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import { PILLARS, SERVICES, NEWS } from "@/lib/site-content";
+import { AWARDS, DONORS, PILLARS, SERVICES, NEWS } from "@/lib/site-content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
