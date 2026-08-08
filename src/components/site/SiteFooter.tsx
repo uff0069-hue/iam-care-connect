@@ -1,4 +1,14 @@
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+
+const SOCIAL_LINKS = [
+  { label: "Facebook", href: "https://www.facebook.com/IAMDonline/", Icon: Facebook },
+  { label: "Instagram", href: "https://www.instagram.com/iamusculardystrophy/", Icon: Instagram },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/channel/UCc9kO1cLDnKQHmAi9QFTWRg",
+    Icon: Youtube,
+  },
+];
 
 export function SiteFooter() {
   return (
@@ -10,6 +20,20 @@ export function SiteFooter() {
             Indian Association of Muscular Dystrophy — empowering families affected by muscular
             dystrophy and other neuromuscular disorders since 1992.
           </p>
+          <div className="mt-4 flex items-center gap-3">
+            {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="grid size-9 place-items-center rounded-full border border-navy-foreground/25 text-navy-foreground/80 transition-colors hover:bg-navy-foreground/10 hover:text-navy-foreground"
+              >
+                <Icon className="size-4" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </div>
 
         <nav aria-label="Footer sections">
