@@ -16,6 +16,7 @@ import { Route as CareRouteImport } from './routes/care'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
+import { Route as PriceListRouteImport } from './routes/price-list'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as TeamRouteImport } from './routes/team'
@@ -55,6 +56,11 @@ const FacilitiesRoute = FacilitiesRouteImport.update({
   path: '/facilities',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PriceListRoute = PriceListRouteImport.update({
+  id: '/price-list',
+  path: '/price-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -79,6 +85,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
+  '/price-list': typeof PriceListRoute
   '/register': typeof RegisterRoute
   '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
@@ -91,6 +98,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
+  '/price-list': typeof PriceListRoute
   '/register': typeof RegisterRoute
   '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
@@ -104,6 +112,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
+  '/price-list': typeof PriceListRoute
   '/register': typeof RegisterRoute
   '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
@@ -118,6 +127,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/donate'
     | '/facilities'
+    | '/price-list'
     | '/register'
     | '/stories'
     | '/team'
@@ -130,6 +140,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/donate'
     | '/facilities'
+    | '/price-list'
     | '/register'
     | '/stories'
     | '/team'
@@ -142,6 +153,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/donate'
     | '/facilities'
+    | '/price-list'
     | '/register'
     | '/stories'
     | '/team'
@@ -155,6 +167,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
   FacilitiesRoute: typeof FacilitiesRoute
+  PriceListRoute: typeof PriceListRoute
   RegisterRoute: typeof RegisterRoute
   StoriesRoute: typeof StoriesRoute
   TeamRoute: typeof TeamRoute
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FacilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/price-list': {
+      id: '/price-list'
+      path: '/price-list'
+      fullPath: '/price-list'
+      preLoaderRoute: typeof PriceListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
@@ -243,6 +263,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
   FacilitiesRoute: FacilitiesRoute,
+  PriceListRoute: PriceListRoute,
   RegisterRoute: RegisterRoute,
   StoriesRoute: StoriesRoute,
   TeamRoute: TeamRoute,
