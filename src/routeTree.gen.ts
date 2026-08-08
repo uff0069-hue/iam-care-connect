@@ -22,6 +22,7 @@ import { Route as PriceListRouteImport } from './routes/price-list'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as StoriesRouteImport } from './routes/stories'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as TeamRouteImport } from './routes/team'
 
 const IndexRoute = IndexRouteImport.update({
@@ -89,6 +90,11 @@ const StoriesRoute = StoriesRouteImport.update({
   path: '/stories',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
   '/stories': typeof StoriesRoute
+  '/support': typeof SupportRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
   '/stories': typeof StoriesRoute
+  '/support': typeof SupportRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
   '/stories': typeof StoriesRoute
+  '/support': typeof SupportRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/research'
     | '/stories'
+    | '/support'
     | '/team'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/research'
     | '/stories'
+    | '/support'
     | '/team'
   id:
     | '__root__'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/research'
     | '/stories'
+    | '/support'
     | '/team'
   fileRoutesById: FileRoutesById
 }
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
   ResearchRoute: typeof ResearchRoute
   StoriesRoute: typeof StoriesRoute
+  SupportRoute: typeof SupportRoute
   TeamRoute: typeof TeamRoute
 }
 
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
@@ -329,6 +349,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterRoute: RegisterRoute,
   ResearchRoute: ResearchRoute,
   StoriesRoute: StoriesRoute,
+  SupportRoute: SupportRoute,
   TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
