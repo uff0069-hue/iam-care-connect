@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiagnosisRouteImport } from './routes/diagnosis'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
 import { Route as MuscularDystrophyRouteImport } from './routes/muscular-dystrophy'
@@ -45,6 +46,11 @@ const CareRoute = CareRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosisRoute = DiagnosisRouteImport.update({
+  id: '/diagnosis',
+  path: '/diagnosis',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DonateRoute = DonateRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/awards': typeof AwardsRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
+  '/diagnosis': typeof DiagnosisRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/awards': typeof AwardsRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
+  '/diagnosis': typeof DiagnosisRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/awards': typeof AwardsRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
+  '/diagnosis': typeof DiagnosisRoute
   '/donate': typeof DonateRoute
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/awards'
     | '/care'
     | '/contact'
+    | '/diagnosis'
     | '/donate'
     | '/facilities'
     | '/muscular-dystrophy'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/awards'
     | '/care'
     | '/contact'
+    | '/diagnosis'
     | '/donate'
     | '/facilities'
     | '/muscular-dystrophy'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/awards'
     | '/care'
     | '/contact'
+    | '/diagnosis'
     | '/donate'
     | '/facilities'
     | '/muscular-dystrophy'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   AwardsRoute: typeof AwardsRoute
   CareRoute: typeof CareRoute
   ContactRoute: typeof ContactRoute
+  DiagnosisRoute: typeof DiagnosisRoute
   DonateRoute: typeof DonateRoute
   FacilitiesRoute: typeof FacilitiesRoute
   MuscularDystrophyRoute: typeof MuscularDystrophyRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnosis': {
+      id: '/diagnosis'
+      path: '/diagnosis'
+      fullPath: '/diagnosis'
+      preLoaderRoute: typeof DiagnosisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/donate': {
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   AwardsRoute: AwardsRoute,
   CareRoute: CareRoute,
   ContactRoute: ContactRoute,
+  DiagnosisRoute: DiagnosisRoute,
   DonateRoute: DonateRoute,
   FacilitiesRoute: FacilitiesRoute,
   MuscularDystrophyRoute: MuscularDystrophyRoute,
