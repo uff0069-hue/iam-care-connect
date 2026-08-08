@@ -20,11 +20,15 @@ import { Route as DonateRouteImport } from './routes/donate'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
 import { Route as MuscularDystrophyRouteImport } from './routes/muscular-dystrophy'
 import { Route as PriceListRouteImport } from './routes/price-list'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RefundRouteImport } from './routes/refund'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ShippingRouteImport } from './routes/shipping'
 import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VolunteerRouteImport } from './routes/volunteer'
 
 const IndexRoute = IndexRouteImport.update({
@@ -82,6 +86,16 @@ const PriceListRoute = PriceListRouteImport.update({
   path: '/price-list',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundRoute = RefundRouteImport.update({
+  id: '/refund',
+  path: '/refund',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -90,6 +104,11 @@ const RegisterRoute = RegisterRouteImport.update({
 const ResearchRoute = ResearchRouteImport.update({
   id: '/research',
   path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingRoute = ShippingRouteImport.update({
+  id: '/shipping',
+  path: '/shipping',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StoriesRoute = StoriesRouteImport.update({
@@ -105,6 +124,11 @@ const SupportRoute = SupportRouteImport.update({
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VolunteerRoute = VolunteerRouteImport.update({
@@ -125,11 +149,15 @@ export interface FileRoutesByFullPath {
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
   '/price-list': typeof PriceListRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
+  '/shipping': typeof ShippingRoute
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesByTo {
@@ -144,11 +172,15 @@ export interface FileRoutesByTo {
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
   '/price-list': typeof PriceListRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
+  '/shipping': typeof ShippingRoute
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesById {
@@ -164,11 +196,15 @@ export interface FileRoutesById {
   '/facilities': typeof FacilitiesRoute
   '/muscular-dystrophy': typeof MuscularDystrophyRoute
   '/price-list': typeof PriceListRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
   '/register': typeof RegisterRoute
   '/research': typeof ResearchRoute
+  '/shipping': typeof ShippingRoute
   '/stories': typeof StoriesRoute
   '/support': typeof SupportRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRouteTypes {
@@ -185,11 +221,15 @@ export interface FileRouteTypes {
     | '/facilities'
     | '/muscular-dystrophy'
     | '/price-list'
+    | '/privacy'
+    | '/refund'
     | '/register'
     | '/research'
+    | '/shipping'
     | '/stories'
     | '/support'
     | '/team'
+    | '/terms'
     | '/volunteer'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -204,11 +244,15 @@ export interface FileRouteTypes {
     | '/facilities'
     | '/muscular-dystrophy'
     | '/price-list'
+    | '/privacy'
+    | '/refund'
     | '/register'
     | '/research'
+    | '/shipping'
     | '/stories'
     | '/support'
     | '/team'
+    | '/terms'
     | '/volunteer'
   id:
     | '__root__'
@@ -223,11 +267,15 @@ export interface FileRouteTypes {
     | '/facilities'
     | '/muscular-dystrophy'
     | '/price-list'
+    | '/privacy'
+    | '/refund'
     | '/register'
     | '/research'
+    | '/shipping'
     | '/stories'
     | '/support'
     | '/team'
+    | '/terms'
     | '/volunteer'
   fileRoutesById: FileRoutesById
 }
@@ -243,11 +291,15 @@ export interface RootRouteChildren {
   FacilitiesRoute: typeof FacilitiesRoute
   MuscularDystrophyRoute: typeof MuscularDystrophyRoute
   PriceListRoute: typeof PriceListRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RefundRoute: typeof RefundRoute
   RegisterRoute: typeof RegisterRoute
   ResearchRoute: typeof ResearchRoute
+  ShippingRoute: typeof ShippingRoute
   StoriesRoute: typeof StoriesRoute
   SupportRoute: typeof SupportRoute
   TeamRoute: typeof TeamRoute
+  TermsRoute: typeof TermsRoute
   VolunteerRoute: typeof VolunteerRoute
 }
 
@@ -330,6 +382,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PriceListRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund': {
+      id: '/refund'
+      path: '/refund'
+      fullPath: '/refund'
+      preLoaderRoute: typeof RefundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
@@ -342,6 +408,13 @@ declare module '@tanstack/react-router' {
       path: '/research'
       fullPath: '/research'
       preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping': {
+      id: '/shipping'
+      path: '/shipping'
+      fullPath: '/shipping'
+      preLoaderRoute: typeof ShippingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/stories': {
@@ -363,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/volunteer': {
@@ -387,11 +467,15 @@ const rootRouteChildren: RootRouteChildren = {
   FacilitiesRoute: FacilitiesRoute,
   MuscularDystrophyRoute: MuscularDystrophyRoute,
   PriceListRoute: PriceListRoute,
+  PrivacyRoute: PrivacyRoute,
+  RefundRoute: RefundRoute,
   RegisterRoute: RegisterRoute,
   ResearchRoute: ResearchRoute,
+  ShippingRoute: ShippingRoute,
   StoriesRoute: StoriesRoute,
   SupportRoute: SupportRoute,
   TeamRoute: TeamRoute,
+  TermsRoute: TermsRoute,
   VolunteerRoute: VolunteerRoute,
 }
 export const routeTree = rootRouteImport
