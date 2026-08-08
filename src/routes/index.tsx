@@ -209,8 +209,7 @@ function Home() {
         </Link>
       </section>
 
-        </div>
-      </section>
+
 
       {/* STORIES PREVIEW */}
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24" aria-labelledby="stories-preview">
