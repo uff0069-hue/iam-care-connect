@@ -49,6 +49,7 @@ const SERVICES = [
     body: "Warm-water sessions help patients improve mobility and reduce muscle stiffness. This low-impact therapy promotes relaxation and strengthens muscles gently in a safe, supervised environment.",
     span: "lg:col-span-2",
     placeholder: "Hydrotherapy Session",
+    src: "/images/services/hydrotherapy.jpg",
   },
   {
     icon: HeartPulse,
@@ -57,6 +58,7 @@ const SERVICES = [
     body: "Programmes designed specifically for muscular dystrophy enhance movement, flexibility and strength, reducing discomfort and building day-to-day independence.",
     span: "",
     placeholder: "Physiotherapy Session at IMDRC",
+    src: "/images/hero/physiotherapy-hall.jpg",
   },
   {
     icon: HeartHandshake,
@@ -65,6 +67,7 @@ const SERVICES = [
     body: "Compassionate counselling helps families cope with emotional challenges, building mental strength and a positive outlook through the entire care journey.",
     span: "",
     placeholder: "Family Counselling Session",
+    src: "/images/services/counselling.jpg",
   },
   {
     icon: UtensilsCrossed,
@@ -73,6 +76,7 @@ const SERVICES = [
     body: "Balanced meals suited to patient needs support energy, wellness and comfort during rehabilitation and daily care.",
     span: "",
     placeholder: "Dining Hall at IMDRC Solan",
+    src: "/images/services/dining.jpg",
   },
   {
     icon: BedDouble,
@@ -81,6 +85,7 @@ const SERVICES = [
     body: "Clean, accessible rooms and dormitory facilities give patients and their families proper rest, safety and a supportive space through treatment.",
     span: "",
     placeholder: "Accessible Dormitory Room",
+    src: "/images/services/room.jpg",
   },
   {
     icon: Sparkles,
@@ -89,6 +94,7 @@ const SERVICES = [
     body: "Tailored yoga supports flexibility, breathing and relaxation. Guided movement and mindful practice improve balance and reduce stress.",
     span: "",
     placeholder: "Therapeutic Yoga Session",
+    src: "/images/services/yoga.jpg",
   },
   {
     icon: Stethoscope,
@@ -97,6 +103,7 @@ const SERVICES = [
     body: "Routine checkups let our medical team assess health, plan personalised care and offer continuous support to improve quality of life.",
     span: "",
     placeholder: "Medical Checkup with Doctor",
+    src: "/images/services/checkup.jpg",
   },
   {
     icon: Activity,
@@ -105,6 +112,7 @@ const SERVICES = [
     body: "Engaging group activities keep patients active physically and emotionally, improving coordination and bringing positivity into daily life.",
     span: "lg:col-span-2",
     placeholder: "Group Therapeutic Activity Session",
+    src: "/images/services/activity.jpg",
   },
 ];
 
@@ -115,6 +123,7 @@ const NEWS = [
     title: "Gold for India: IMDRC-trained participants shine at World Boccia 2024",
     body: "Anjali Devi trained at IMDRC Solan and went on to win a gold medal at the World Boccia Challenger 2024 in Cairo, Egypt.",
     placeholder: "Anjali Devi World Boccia Gold Medalist",
+    src: "/images/stories/anjali-devi-boccia.jpg",
   },
   {
     date: "22 Feb 2024",
@@ -122,6 +131,7 @@ const NEWS = [
     title: "Governor of HP appoints Vivek Agnihotri to raise muscular dystrophy awareness",
     body: "Filmmaker Vivek Ranjan Agnihotri joins IMDRC as brand ambassador for muscular dystrophy awareness in India.",
     placeholder: "Vivek Agnihotri joins IMDRC as Brand Ambassador",
+    src: "/images/stories/vivek-agnihotri.jpg",
   },
   {
     date: "18 Feb 2024",
@@ -129,6 +139,7 @@ const NEWS = [
     title: "Vedant's journey: overcoming challenges and pursuing success",
     body: "Vedant's life has been an incredible journey filled with determination and a strong will to keep learning and growing.",
     placeholder: "Vedant at IMDRC Solan",
+    src: "/images/stories/vedant.jpg",
   },
 ];
 
@@ -137,48 +148,78 @@ const PILLARS = [
     title: "Obtaining a diagnosis",
     body: "You or your child has trouble walking or moving, but you are unsure what is causing it? Learn how to obtain a clear diagnosis.",
     placeholder: "Doctor explaining diagnosis to family",
+    src: "/images/services/diagnosis.jpg",
   },
   {
     title: "Managing MD at IMDRC Manav Mandir",
     body: "IMDRC Manav Mandir has state-of-the-art facilities to help you learn how to live successfully with muscular dystrophy.",
     placeholder: "IMDRC Manav Mandir facility",
+    src: "/images/hero/imdrc-entrance.jpg",
   },
   {
     title: "About Muscular Dystrophy",
     body: "Learn about muscular dystrophy, ongoing research and the cures currently being explored worldwide.",
     placeholder: "Awareness session on Muscular Dystrophy",
+    src: "/images/facility/group-activity-dance.jpg",
   },
   {
     title: "How you can help us",
     body: "IAMD needs your help to continue its mission. Here are the ways you can help us support those in need.",
     placeholder: "Volunteers supporting IAMD",
+    src: "/images/awards/founder-with-smriti-irani-visit.jpg",
   },
 ];
 
 const AWARDS = [
-  "2004 National Award by President Dr. A.P.J. Abdul Kalam",
-  "2010 IBN-7 Award presented by Salman Khan",
-  "2012 Mahila Aayog Award by Sushma Swaraj Ji",
-  "2012 Mahila Aayog Award by Smriti Irani Ji",
-  "2016 Grah Luxmi Award by Kiran Bedi Ji",
-  "2017 State Award by Chief Minister Sh. Vir Bhadra Singh Ji",
-  "2018 23rd CIDC Award",
-  "General Secretary Vipul with Gurudev Sri Ravi Shankar",
+  {
+    label: "2004 National Award by President Dr. A.P.J. Abdul Kalam",
+    src: "/images/awards/2004-national-award-kalam.jpg",
+  },
+  {
+    label: "2010 IBN-7 Award presented by Salman Khan",
+    src: "/images/awards/2010-ibn7-award-salman-khan.jpg",
+  },
+  {
+    label: "2012 Mahila Aayog Award by Sushma Swaraj Ji",
+    src: "/images/awards/2012-mahila-aayog-sushma-swaraj.jpg",
+  },
+  {
+    label: "2012 Mahila Aayog Award by Smriti Irani Ji",
+    src: "/images/awards/2012-mahila-aayog-smriti-irani.jpg",
+  },
+  {
+    label: "2016 Grah Luxmi Award by Kiran Bedi Ji",
+    src: "/images/awards/2016-grah-luxmi-kiran-bedi.jpg",
+  },
+  {
+    label: "2017 State Award by Chief Minister Sh. Vir Bhadra Singh Ji",
+    src: "/images/awards/2017-state-award-vir-bhadra-singh.jpg",
+  },
+  { label: "2018 23rd CIDC Award", src: "/images/awards/2018-cidc-award.jpg" },
+  {
+    label: "General Secretary Vipul with Gurudev Sri Ravi Shankar",
+    src: "/images/awards/vipul-with-gurudev-ravishankar.jpg",
+  },
+  {
+    label: "2011 State Award by Chief Minister Sh. Jai Ram Thakur Ji",
+    src: "/images/awards/2011-state-award-jai-ram-thakur.jpg",
+  },
 ];
 
 const DONORS = [
-  "Wagh Bakri Group — Piyush Bhai Desai",
-  "State Bank of India",
-  "Crystal Crop Protection Pvt Ltd",
-  "Star Cement Meghalaya",
-  "Somany Ceramics",
-  "Shivalik Bimetal Controls Pvt Ltd",
-  "Seth Anand Ram Jaipuria",
-  "Microtek International",
-  "Meridian Medicare Limited",
-  "Sri Hari Sewa Trust",
-  "Gajanand Trust",
-  "GD Build Tech",
+  { name: "Wagh Bakri Group — Piyush Bhai Desai", src: "/images/donors/wagh-bakri-piyush-desai.jpg" },
+  { name: "State Bank of India", src: "/images/donors/state-bank-of-india.jpg" },
+  { name: "Star Cement Meghalaya", src: "/images/donors/star-cement-meghalaya.jpg" },
+  { name: "Somany Ceramics", src: "/images/donors/somany-ceramics.jpg" },
+  { name: "Shivalik Bimetal Controls Pvt Ltd", src: "/images/donors/shivalik-bimetal-controls.jpg" },
+  { name: "Seth Anand Ram Jaipuria", src: "/images/donors/seth-anand-ram-jaipuria.jpg" },
+  { name: "Microtek International", src: "/images/donors/microtek-international.jpg" },
+  { name: "Meridian Medicare Limited", src: "/images/donors/meridian-medicare.jpg" },
+  { name: "Sri Hari Sewa Trust", src: "/images/donors/sri-hari-sewa-trust.jpg" },
+  { name: "Gajanand Trust", src: "/images/donors/gajanand-trust.jpg" },
+  { name: "GD Build Tech", src: "/images/donors/gd-buildtech.jpg" },
+  { name: "Shriman Kisan Lal ji Sarda Pratishthan", src: "/images/donors/shriman-kisan-lalji-sarda.jpg" },
+  { name: "Gopi Krishna Maliwal", src: "/images/donors/gopi-krishna-maliwal.jpg" },
 ];
 
 const FAQS = [
@@ -275,10 +316,19 @@ function Home() {
                 label="Photo of IMDRC Solan Entrance"
                 aspect="aspect-[16/10]"
                 note="Hero slider image 1 from iamd.in"
+                src="/images/hero/imdrc-entrance.jpg"
               />
               <div className="grid gap-4 sm:grid-cols-2">
-                <ImagePlaceholder label="Hydrotherapy Pool" aspect="aspect-[4/3]" />
-                <ImagePlaceholder label="Patients in Physiotherapy Hall" aspect="aspect-[4/3]" />
+                <ImagePlaceholder
+                  label="Hydrotherapy Pool"
+                  aspect="aspect-[4/3]"
+                  src="/images/hero/hydrotherapy-pool.jpg"
+                />
+                <ImagePlaceholder
+                  label="Patients in Physiotherapy Hall"
+                  aspect="aspect-[4/3]"
+                  src="/images/hero/physiotherapy-hall.jpg"
+                />
               </div>
             </div>
           </div>
@@ -290,6 +340,7 @@ function Home() {
             <ImagePlaceholder
               label="IAMD founders and patients at Manav Mandir"
               aspect="aspect-[4/3]"
+              src="/images/facility/group-activity-dance.jpg"
             />
             <div>
               <h2 className="text-3xl font-extrabold sm:text-4xl">About IAMD</h2>
@@ -340,7 +391,11 @@ function Home() {
                   key={service.title}
                   className={`lift-card flex flex-col rounded-2xl border border-border bg-card p-6 ${service.span}`}
                 >
-                  <ImagePlaceholder label={service.placeholder} aspect="aspect-[16/9]" />
+                  <ImagePlaceholder
+                    label={service.placeholder}
+                    aspect="aspect-[16/9]"
+                    src={service.src}
+                  />
                   <span className="mt-6 inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <service.icon className="size-5" aria-hidden="true" />
                   </span>
@@ -377,14 +432,14 @@ function Home() {
 
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "Hydrotherapy Pool at IMDRC",
-              "Physiotherapy & Exercise Hall",
-              "Accessible Dormitory Room",
-              "Dining Hall serving patients",
-              "Yoga & Meditation Hall",
-              "Facility Walkthrough Video — IMDRC Solan campus",
-            ].map((label) => (
-              <ImagePlaceholder key={label} label={label} aspect="aspect-[4/3]" />
+              { label: "Hydrotherapy Pool at IMDRC", src: "/images/services/hydrotherapy.jpg" },
+              { label: "Physiotherapy & Exercise Hall", src: "/images/hero/physiotherapy-hall.jpg" },
+              { label: "Accessible Dormitory Room", src: "/images/services/room.jpg" },
+              { label: "Dining Hall serving patients", src: "/images/services/dining.jpg" },
+              { label: "Yoga & Meditation Hall", src: "/images/services/yoga.jpg" },
+              { label: "Facility Walkthrough Video — IMDRC Solan campus" },
+            ].map(({ label, src }) => (
+              <ImagePlaceholder key={label} label={label} aspect="aspect-[4/3]" src={src} />
             ))}
           </div>
         </section>
@@ -403,7 +458,7 @@ function Home() {
                   key={item.title}
                   className="lift-card flex flex-col rounded-2xl border border-border bg-card p-6"
                 >
-                  <ImagePlaceholder label={item.placeholder} aspect="aspect-[16/9]" />
+                  <ImagePlaceholder label={item.placeholder} aspect="aspect-[16/9]" src={item.src} />
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <span className="rounded-full bg-success/12 px-3 py-1 text-xs font-bold uppercase tracking-wide text-success">
                       {item.badge}
@@ -431,7 +486,7 @@ function Home() {
                   key={p.title}
                   className="lift-card flex flex-col rounded-2xl border border-border bg-card p-6"
                 >
-                  <ImagePlaceholder label={p.placeholder} aspect="aspect-[16/9]" />
+                  <ImagePlaceholder label={p.placeholder} aspect="aspect-[16/9]" src={p.src} />
                   <h3 className="mt-6 text-base font-extrabold">{p.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {p.body}
@@ -461,15 +516,20 @@ function Home() {
               label="President Kalam presenting National Award, 2004"
               aspect="aspect-[16/9]"
               note="Featured archival award photograph"
+              src="/images/awards/2004-national-award-kalam.jpg"
             />
-            <ImagePlaceholder label="Achievers Poster 2025" aspect="aspect-[16/9]" />
+            <ImagePlaceholder
+              label="Achievers Poster 2025"
+              aspect="aspect-[16/9]"
+              src="/images/awards/achievers-poster.jpg"
+            />
           </div>
 
           <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {AWARDS.map((award) => (
-              <li key={award} className="lift-card rounded-2xl border border-border bg-card p-4">
-                <ImagePlaceholder label={award} aspect="aspect-[4/3]" />
-                <p className="mt-4 text-sm font-semibold leading-snug">{award}</p>
+              <li key={award.label} className="lift-card rounded-2xl border border-border bg-card p-4">
+                <ImagePlaceholder label={award.label} aspect="aspect-[4/3]" src={award.src} />
+                <p className="mt-4 text-sm font-semibold leading-snug">{award.label}</p>
               </li>
             ))}
           </ul>
@@ -513,6 +573,7 @@ function Home() {
                 <ImagePlaceholder
                   label="Coordinator welcoming a patient at IMDRC reception"
                   aspect="aspect-[16/9]"
+                  src="/images/facility/ward-beds.jpg"
                 />
               </div>
             </div>
@@ -583,8 +644,12 @@ function Home() {
             </p>
             <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {DONORS.map((donor) => (
-                <li key={donor}>
-                  <ImagePlaceholder label={`Donor logo — ${donor}`} aspect="aspect-[3/2]" />
+                <li key={donor.name}>
+                  <ImagePlaceholder
+                    label={`Donor logo — ${donor.name}`}
+                    aspect="aspect-[3/2]"
+                    src={donor.src}
+                  />
                 </li>
               ))}
             </ul>
